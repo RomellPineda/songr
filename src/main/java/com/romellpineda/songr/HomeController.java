@@ -13,9 +13,4 @@ public class HomeController {
         return "home";
     }
 
-//    @GetMapping("/emotions")
-//    public String getEmotions(Model m) {
-//
-//        return "emotions";
-//    }
 }
