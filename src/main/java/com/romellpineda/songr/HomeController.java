@@ -23,9 +23,9 @@ public class HomeController {
     @GetMapping("/albums")
     public String getAlbums(Model m) {
         Album[] albums = new Album[]{
-                new Album("Enter The Wu-Tang", "Wu-Tang Clan", 16, 100),
-                new Album("Make Yourself", "Incubus", 13, 99),
-                new Album("Legend", "Bob Marley", 12, 101),
+                new Album("Enter The Wu-Tang", "Wu-Tang Clan", 16, 100, "http://example.com/"),
+                new Album("Make Yourself", "Incubus", 13, 99, "http://example.com/"),
+                new Album("Legend", "Bob Marley", 12, 101, "http://example.com/"),
         };
         m.addAttribute("albums", albums);
         return "albums";
