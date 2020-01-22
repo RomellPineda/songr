@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Albums</title>
+</head>
+<body>
+    <h1>Albums</h1>
+    <ul>
+        <li th:each="album : ${albums}">
+            <span th:text="${album}"></span>
+            <span th:text="${album.songCount}"></span>
+        </li>
+    </ul>
+</body>
+</html>
