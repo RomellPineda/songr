@@ -2,7 +2,8 @@
 
 *Description*
 
-Java web application with 3 routes and methods for rendering basic html page.
+Java full-stack web application with CRUD functionality and 3 routes and methods for rendering basic html page.
+Functional read and add operations.
 "/hello" route renders the home page.
 "/capitalize/{str}" uses the caps method to render a string passed as a parameter through the path variable as a capitalized string.
 "/albums" renders a page with a list of album object passed from the controller.
