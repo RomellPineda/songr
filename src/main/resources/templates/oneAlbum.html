@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Album</title>
+</head>
+<body>
+    <h1>One Album</h1>
+    <p th:text="${frenchfry}"></p>
+    <p th:text="${frenchfry.getId()}"></p>
+<!--    <p th:if="${frenchfry} != null" th:text="${frenchfry.title}"></p>-->
+
+    <p th:text="${frenchfry.songCount}"></p>
+    <p th:text="${frenchfry.length}"></p>
+    <ul th:each="song : ${frenchfry.songs}">
+        <li>
+            <span th:text="${song}"></span>
+        </li>
+    </ul>
+
+    <h2>Add Song</h2>
+    <form action="/song" method="POST">
+        <input type="hidden" th:value="${frenchfry.getId()}" name="id">
+        title: <input type="text" name="title">
+        length: <input type="number" name="length">
+        track number: <input type="number" name="trackNumber">
+        <input type="submit">
+    </form>
+</body>
+</html>
