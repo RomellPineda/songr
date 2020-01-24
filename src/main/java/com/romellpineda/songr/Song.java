@@ -1,9 +1,18 @@
 package com.romellpineda.songr;
 
+import javax.persistence.*;
+
+@Entity
 public class Song {
-    String title;
-    int length;
-    int trackNumber;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    public String title;
+    public int length;
+    public int trackNumber;
+
+    @ManyToOne
+    Album album;
 
     public Song() {}
 
@@ -12,4 +21,13 @@ public class Song {
         this.length = length;
         this.trackNumber = trackNumber;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String toString() {
+        return String.format("Song Title: %s", this.title);
+    }
+
 }
