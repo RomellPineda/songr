@@ -7,11 +7,16 @@
 <body>
     <h1>One Album</h1>
     <p th:text="${frenchfry}"></p>
-    <p>Song Count</p>
+    <p th:text="${frenchfry.getId()}"></p>
+<!--    <p th:if="${frenchfry} != null" th:text="${frenchfry.title}"></p>-->
+
     <p th:text="${frenchfry.songCount}"></p>
-    <br>
-    <p>Album Length</p>
     <p th:text="${frenchfry.length}"></p>
+    <ul th:each="song : ${frenchfry.songs}">
+        <li>
+            <span th:text="${song}"></span>
+        </li>
+    </ul>
 
     <h2>Add Song</h2>
     <form action="/song" method="POST">
@@ -21,12 +26,5 @@
         track number: <input type="number" name="trackNumber">
         <input type="submit">
     </form>
-
-    <h2>Album Songs</h2>
-    <ul th:each="song : ${frenchfry.songs}">
-        <span th:text="${song.trackNumber} + ' ' "></span>
-        <li th:text="${song.title}"></li>
-        <span th:text="' (' + ${song.length} + ') '"></span>
-    </ul>
 </body>
 </html>

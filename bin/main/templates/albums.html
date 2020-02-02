@@ -8,9 +8,20 @@
     <h1>Albums</h1>
     <ul>
         <li th:each="album : ${albums}">
-            <span th:text="${album}"></span>
-            <span th:text="${album.songCount}"></span>
+            <a th:href="@{'/album/' + ${album.getId()}}">
+                <img th:src="${album.imageUrl}">
+            </a>
         </li>
     </ul>
+
+    <h2>Add Album</h2>
+    <form action="/album/new" method="POST">
+        title: <input type="text" name="title">
+        artist: <input type="text" name="artist">
+        song count: <input type="number" name="songCount">
+        length: <input type="number" name="length">
+        image url: <input type="text" name="imageUrl">
+        <input type="submit">
+    </form>
 </body>
 </html>

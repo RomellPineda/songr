@@ -15,7 +15,7 @@ public class Album {
     public int length;
     public String imageUrl;
 
-    @OneToMany(mappedBy = "album")
+    @OneToMany(mappedBy = "album", fetch = FetchType.LAZY)
     public List<Song> songs;
 
     public Album() {};
@@ -30,6 +30,22 @@ public class Album {
 
     public Long getId() {
         return id;
+    }
+
+    public int getSongCount() {
+        return songCount;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
     }
 
     public String toString() {

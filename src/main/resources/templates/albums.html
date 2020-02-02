@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>Albums</h1>
+    <p>Click on album image to view album information and add songs</p>
     <ul>
         <li th:each="album : ${albums}">
             <a th:href="@{'/album/' + ${album.getId()}}">
