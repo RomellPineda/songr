@@ -11,7 +11,7 @@ public class Song {
     public int length;
     public int trackNumber;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     Album album;
 
     public Song() {}
